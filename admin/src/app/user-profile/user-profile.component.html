@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Logo</a>
+  
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <!--<li class="nav-item">
+        <a class="nav-link" routerLink="AddCategory">Link 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link 2</a>
+      </li>-->
+  
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Category
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink="AddCategory">Add Category</a>
+          <a class="dropdown-item" routerLink="ViewCategory">View Category</a>
+        </div>
+      </li>
+
+      <!--Food Menu
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Food
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink="AddFood">Add Food</a>
+          <a class="dropdown-item" routerLink="ViewFood">View Food</a>
+        </div>
+      </li>
+
+      End Food Menu-->
+      <!--question menu-->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Question
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink="Addq">Add Question</a>
+          <a class="dropdown-item" routerLink="Viewq">View Question</a>
+        </div>
+      </li>
+      <!--Question menu -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="viewuser">View Users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="result">Result</a>
+      </li>
+
+      <li *ngIf="userDetails" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color:aquamarine">
+          Welcome Admin:{{userDetails.fullName.split(' ')[0]}}
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" (click)="onLogout()">Log Out</a>
+        </div>
+      </li>
+
+    </ul>
+  </nav>
+<router-outlet></router-outlet>

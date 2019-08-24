@@ -1,0 +1,22 @@
+<div class="viewcat" style="background-color: aquamarine; max-height: 300vh;">
+<div class="container">
+  <h2>View Category</h2>            
+  <table class="table table-hover">
+
+      <tr>
+        <th>Sl No.</th>
+        <th>Catgory Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    
+      <tr *ngFor="let cat of category;let i = index">
+        <td>{{i+1}}</td>
+        <td>{{cat.categoryname}}</td>
+        <td><a routerLink="../EditCategory/{{cat._id}}"><img src="assets/logo/edit.png" id="icon" height="50" width="50" alt="User Icon" /></a></td>
+        <td><a class="action-btn" (click)="onDelete(cat._id)"><img src="assets/logo/delete.png" id="icon" height="50" width="50" alt="User Icon" /></a></td>
+      </tr>
+      <router-outlet></router-outlet>
+  </table>
+</div>
+</div>

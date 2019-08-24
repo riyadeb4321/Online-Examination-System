@@ -1,0 +1,39 @@
+
+<div style="text-align:center">
+  <h1>
+    Add Food 
+  </h1>
+ </div>
+ <div style="margin:20px 50px 20px 50px;">
+<form #Foodform="ngForm" (ngSubmit)="onSubmit(Foodform)" enctype="multipart/form-data">
+    <input type="hidden" name="_id" #_id="ngModel" ngModel [(ngModel)]="selectedFood._id">
+  <div class="form-group">
+    <label for="Food">Food Name</label>
+    <input type="text" name="Food" #qname="ngModel" ngModel [(ngModel)]="selectedFood.fname" class="form-control" id="inputdefault" placeholder="Food Name">
+  </div>
+  <div class="form-group">
+    <label for="Food">Food Description</label>
+    <input type="text" name="Food" #qname="ngModel" ngModel [(ngModel)]="selectedFood.fdesc" class="form-control" id="inputdefault" placeholder="Food Description">
+  </div>
+  <div class="form-group">
+    <label for="Food">Food Price</label>
+    <input type="text" name="Food" #qname="ngModel" ngModel [(ngModel)]="selectedFood.fprice" class="form-control" id="inputdefault" placeholder="Food Price">
+  </div>
+
+  <div class="form-group">
+    <label for="Food">Food Picture</label>
+    <input type="file" name="photo"  [(ngModel)]="selectedFood.fpic" class="form-control" id="inputdefault" (change)="onfileselect($event)" />
+  </div>
+  <div class="form-group">
+    <label for="Food">Food Category</label>
+  		<select [(ngModel)]="selectedFood.category_id" name="fooa" class="form-control"> 
+				<option [selected]="selectedFood.category_id == 'select'" [value]="select">SELECT CATEGORY</option>  
+        <option  *ngFor="let cat of category" [value]="cat.categoryname">{{cat.categoryname}}</option>
+			</select>
+		</div>
+
+  <div class="form-group">
+    <input type="submit" class="form-control btn btn-success" id="inputdefault">
+  </div>
+</form>
+</div>

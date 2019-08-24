@@ -1,0 +1,56 @@
+
+<div style="text-align:center">
+  <h1>
+    Add Question 
+  </h1>
+ </div>
+ <div style="margin:20px 50px 20px 50px;">
+<form #questionform="ngForm" (ngSubmit)="onSubmit(questionform)">
+    <input type="hidden" name="_id" #_id="ngModel" ngModel [(ngModel)]="selectedquestion._id">
+  <div class="form-group">
+    <label for="question">Question Name</label>
+    <input type="text" name="qname" #qname="ngModel" ngModel [(ngModel)]="selectedquestion.qname" class="form-control" id="inputdefault" placeholder="question Name">
+  </div>
+
+  <div class="form-group">
+    <label for="question">Option 1</label>
+    <input type="text" name="opt1" #qname="ngModel" ngModel [(ngModel)]="selectedquestion.opt1" class="form-control" id="inputdefault" placeholder="question Name">
+  </div>
+
+  <div class="form-group">
+    <label for="question">Option 2</label>
+    <input type="text" name="opt2" #qname="ngModel" ngModel [(ngModel)]="selectedquestion.opt2" class="form-control" id="inputdefault" placeholder="question Name">
+  </div>
+
+  <div class="form-group">
+    <label for="question">Option 3</label>
+    <input type="text" name="opt3" #qname="ngModel" ngModel [(ngModel)]="selectedquestion.opt3" class="form-control" id="inputdefault" placeholder="question Name">
+  </div>
+
+  <div class="form-group">
+    <label for="question">Option 4</label>
+    <input type="text" name="opt4" #qname="ngModel" ngModel [(ngModel)]="selectedquestion.opt4" class="form-control" id="inputdefault" placeholder="question Name">
+  </div>
+
+
+  <div class="form-group">
+    <label for="question">Correct Answer</label>
+    <input type="text" name="canswer" #qname="ngModel" ngModel [(ngModel)]="selectedquestion.canswer" class="form-control" id="inputdefault" placeholder="question Name">
+  </div>
+
+
+
+
+
+  <div class="form-group">
+    <label for="Food">Subject</label>
+  		<select [(ngModel)]="selectedquestion.category_id" name="category_id" class="form-control"> 
+				<option [selected]="selectedquestion.category_id == 'select'" [value]="select">SELECT CATEGORY</option>  
+        <option  *ngFor="let cat of category" [value]="cat.categoryname">{{cat.categoryname}}</option>
+			</select>
+	</div>
+  <div class="form-group">
+    <input type="submit" class="form-control btn btn-success" id="inputdefault">
+  </div>
+</form>
+</div>

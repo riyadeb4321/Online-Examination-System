@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Logo</a>
+  
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="cat">Examination</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="result">Result</a>
+      </li>
+     <li *ngIf="userDetails" class="nav-item" style="color:aquamarine">
+        <a class="nav-link" href="" >Welcome Student:{{userDetails.fullName.split(' ')[0]}}</a>
+     </li>
+      <li>
+          <button class="btn btn-success" (click)="onLogout()">LOG OUT</button>
+      </li>
+    </ul>
+  </nav>
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+<!--<table *ngIf="userDetails" class="table-fill">
+  <thead>
+      <tr>
+          <th colspan="2" class="text-center">User Profile</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>First Name</td>
+          <td>{{userDetails.fullName.split(' ')[0]}}</td>
+      </tr>
+      <tr>
+          <td>Last Name</td>
+          <td>{{userDetails.fullName.split(' ')[1]}}</td>
+      </tr>
+      <tr>
+          <td>Email</td>
+          <td>{{userDetails.email}}</td>
+      </tr>
+      <tr>
+          <td colspan="2" class="text-center">
+              <input type="button" (click)="onLogout()" value="Logout" />
+          </td>
+      </tr>
+  </tbody>
+</table>
+-->

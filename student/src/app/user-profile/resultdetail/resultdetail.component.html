@@ -1,0 +1,20 @@
+<div class="viewcat" style="background-color: aquamarine; max-height: 300vh;">
+  <div class="container">
+    <h2>View Result</h2>            
+    <table class="table table-hover">
+  
+        <tr>
+          <th>Sl No.</th>
+          <th>Subject Name</th>
+          <th>Total Marks</th>
+        </tr>
+      
+        <tr *ngFor="let res of results;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{res._id}}</td>
+          <td>{{res.marks}}</td>
+        </tr>
+        <router-outlet></router-outlet>
+    </table>
+  </div>
+  </div>

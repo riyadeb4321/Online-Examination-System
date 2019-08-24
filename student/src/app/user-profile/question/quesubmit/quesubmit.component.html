@@ -1,0 +1,39 @@
+<div class="container" style="margin:20px;float: left;">
+  <div class="row">
+    <div class="col-md-12">
+        <div class="card border-success">
+          <div class="card-header">Question</div>
+          <div class="card-body">
+              <div>
+                  <form #questionform="ngForm" (ngSubmit)="onAnswer(questionform)" >
+                    
+                  
+                    <input type="hidden" name="qid"  [(ngModel)]="selectedQuestion._id">
+                  
+                    <table style="width:60%;background-color: azure;">
+                      <tr>
+                        <td>Question</td>
+                        <td>{{selectedQuestion.qname}}</td>
+                      </tr>
+                      <tr>
+                        <td><input type="radio" name="uanswer" value="{{selectedQuestion.opt1}}" [(ngModel)]="uanswer" >{{selectedQuestion.opt1}}</td>
+                        <td><input type="radio" name="uanswer" value="{{selectedQuestion.opt2}}" [(ngModel)]="uanswer">{{selectedQuestion.opt2}}</td>
+                      </tr>
+                      <tr>
+                        <td><input type="radio" name="uanswer" value="{{selectedQuestion.op3}}" [(ngModel)]="uanswer">{{selectedQuestion.opt3}}</td>
+                        <td><input type="radio" name="uanswer" value="{{selectedQuestion.opt4}}" [(ngModel)]="uanswer">{{selectedQuestion.opt4}}</td>
+                        <input type="hidden" name="canswer"  [(ngModel)]="selectedQuestion.canswer">
+                        <input type="hidden" name="category_id"  [(ngModel)]="selectedQuestion.category_id"> 
+                      </tr>
+                      <tr>
+                        <td colspan="2"><input type="submit" value="submit"></td>
+                      </tr>
+                    </table>
+                    </form>
+                  </div>
+              
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

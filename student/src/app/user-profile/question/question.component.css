@@ -1,0 +1,11 @@
+ul{
+list-style-type: none;
+}
+li{
+    font-size: 12px;
+    font-style: italic;
+    display: inline;
+}
+.list-inline-item:not(:last-child) {
+    margin-right: 0px;
+}

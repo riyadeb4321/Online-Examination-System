@@ -1,0 +1,21 @@
+<div class="viewcat" style="background-color: aquamarine; max-height: 300vh;">
+  <div class="container">
+    <h2>View Result Subject Wise</h2>            
+    <table class="table table-hover">
+  
+        <tr>
+          <th>Sl No.</th>
+          <th>Student Email</th>
+          <th>Marks</th>
+        </tr>
+      
+        <tr *ngFor="let res of results;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{res._id}}</td>
+          <td>{{res.marks}}</td>
+          
+        </tr>
+        
+    </table>
+  </div>
+  </div> 

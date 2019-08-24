@@ -1,0 +1,34 @@
+<div class="viewcat" style="background-color: aquamarine; max-height: 300vh;">
+  <div class="container">
+    <h2>View Category</h2>            
+    <table class="table table-hover">
+  
+        <tr>
+          <th>Sl No.</th>
+          <th>Question Name</th>
+          <th>Option 1</th>
+          <th>Option 2</th>
+          <th>Option 3</th>
+          <th>Option 4</th>
+          <th>Correct Answer</th>
+          <th>Subject</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      
+        <tr *ngFor="let que of questions;let i = index">
+          <td>{{i+1}}</td>
+          <td>{{que.qname}}</td>
+          <td>{{que.opt1}}</td>
+          <td>{{que.opt2}}</td>
+          <td>{{que.opt3}}</td>
+          <td>{{que.opt4}}</td>
+          <td>{{que.canswer}}</td>
+          <td>{{que.category_id}}</td>
+          <td><a routerLink="../Editq/{{que._id}}"><img src="assets/logo/edit.png" id="icon" height="50" width="50" alt="User Icon" /></a></td>
+          <td><a class="action-btn" (click)="onDelete(que._id)"><img src="assets/logo/delete.png" id="icon" height="50" width="50" alt="User Icon" /></a></td>
+        </tr>
+        <router-outlet></router-outlet>
+    </table>
+  </div>
+  </div>
